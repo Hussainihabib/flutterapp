@@ -72,12 +72,15 @@ const profilrbuttonlist =[
  order,
  wishlist,
  message,
+  help,
+
 ];
 
 const profilrbuttonicon =[
  icOrder,
  icOrder,
  icMessages,
+ icHeadphone,
 ];
 
 const paymentmethodimg=[

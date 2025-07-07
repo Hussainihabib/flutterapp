@@ -12,7 +12,9 @@ const fp = "forgetpassword";
 const login= " Log in";
 const loggedin= "Log in Succesfully";
 const loggedout= "Log out Succesfully";
-const signup = "Sign up";
+const signup = "Sign up ";
+const signuped = "Sign up  Succesfully";
+
 const createnewaccount= "or , create new account";
 const loginwith = "Log in with";
 const accountwith = "create Account with";
@@ -74,7 +76,9 @@ const logout="Logout";
 const 
 wishlist="MY wishlist",
 order="MY Order",
-message="Messages"
+message="Messages",
+help="Help & Support"
+
 
 
 

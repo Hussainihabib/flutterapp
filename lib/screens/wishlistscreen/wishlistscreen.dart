@@ -37,7 +37,7 @@ class Wishlistscreen extends StatelessWidget {
               leading: Image.network(
                 "${data[index]['p_img'][0]}",
                 width: 80,
-                fit: BoxFit.cover,
+                fit: BoxFit.fitHeight,
                  ),
                 title: "${data[index]['p_name']}" .text.fontFamily(bold).size(16).make(),
                 subtitle: "${data[index]['p_price']}".numCurrency .text.fontFamily(bold).color(bluecolor).make(),

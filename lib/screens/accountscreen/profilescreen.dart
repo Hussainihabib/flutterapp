@@ -5,12 +5,14 @@ import 'package:emart_app/controller/authcontroller.dart';
 import 'package:emart_app/controller/profilecontroller.dart';
 import 'package:emart_app/screens/accountscreen/components/detailcard.dart';
 import 'package:emart_app/screens/accountscreen/editprofilescreen.dart';
+import 'package:emart_app/screens/accountscreen/supportscreen.dart';
 import 'package:emart_app/screens/auth/login_screen.dart';
 import 'package:emart_app/screens/chatscreen/messagingscreen.dart';
 import 'package:emart_app/screens/orderscreen/orderscreen.dart';
 import 'package:emart_app/screens/wishlistscreen/wishlistscreen.dart';
 import 'package:emart_app/services/firestoreservices.dart';
 import 'package:emart_app/widget/bgwidget.dart';
+import 'package:emart_app/widget/button.dart';
 import 'package:get/get.dart';
 
 class Profilescreen extends StatelessWidget {
@@ -83,9 +85,12 @@ class Profilescreen extends StatelessWidget {
                         )),
                      
                         OutlinedButton(
+                          
                           style: OutlinedButton.styleFrom(
+                            backgroundColor: bluecolor,
                             side: const BorderSide(
-                              color:Colors.white
+                              color:darkFontGrey
+                              
                             )
                           ),
                           onPressed: 
@@ -94,7 +99,7 @@ class Profilescreen extends StatelessWidget {
                           Get.offAll(() => const LoginScreen());
                         }, child: 
                         logout.
-                        text.color(bluecolor).
+                        text.color(darkFontGrey).
                         fontFamily(semibold).
                         make())
                      
@@ -115,37 +120,38 @@ class Profilescreen extends StatelessWidget {
                 
                 // buttons sec
                 30.heightBox,
-                ListView.separated( 
-                  shrinkWrap: true,
-                
-                  separatorBuilder: (context, index) {
-                    return const Divider(
-                      color: lightGrey,
-                    );
-                  },
-                  itemCount: profilrbuttonlist.length,
-                  
-                  itemBuilder: (BuildContext context, int index){
-                 return  ListTile(
-                  onTap: (){
-                    switch (index) {
-                      case 0:
-                        Get.to(() => const Orderscreen());
-                        break;
-                          case 1:
-                        Get.to(() => const Wishlistscreen());
-                        break;  case 2:
-                        Get.to(() => const Messagingscreen());
-                        break;
-                    }
-                  },
-                
-                  leading: Image.asset(profilrbuttonicon[index], width: 22,),
-                  title: profilrbuttonlist[index].text.fontFamily(semibold).color(darkFontGrey).make(),
-                 );
-                
-                  }).box.white.rounded.shadowSm.padding(const EdgeInsets.symmetric(horizontal: 16)).make()
-                
+              ListView.separated(
+  shrinkWrap: true,
+  separatorBuilder: (context, index) {
+    return const Divider(
+      color: lightGrey,
+    );
+  },
+  itemCount: profilrbuttonlist.length,
+  itemBuilder: (BuildContext context, int index) {
+    return ListTile(
+      onTap: () {
+        switch (index) {
+          case 0:
+            Get.to(() => const Orderscreen());
+            break;
+          case 1:
+            Get.to(() => const Wishlistscreen());
+            break;
+          case 2:
+            Get.to(() => const Messagingscreen());
+            break;
+          case 3:
+            Get.to(() => SupportScreen());
+            break;
+        }
+      },
+      leading: Image.asset(profilrbuttonicon[index], width: 22,color: bluecolor,),
+      title: profilrbuttonlist[index].text.fontFamily(semibold).color(whiteColor).make(),
+    );
+  },
+).box.transparent.rounded.shadowSm.padding(const EdgeInsets.symmetric(horizontal: 16)).make()
+  
                 
                   ],
                 ));

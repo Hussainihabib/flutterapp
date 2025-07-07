@@ -40,21 +40,34 @@ class Categorydetails extends StatelessWidget {
                 child: "No Product Found".text.color(darkFontGrey).make(),
               );
 
-            }else{
-              var data = snapshot.data!.docs;
+            }else {
+  var data = snapshot.data!.docs;
 
-              return   Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+  // Sort: first alphabetically by name, then by price ascending
+  data.sort((a, b) {
+    // Sort by name (case insensitive)
+    int nameCompare = a['p_name'].toString().toLowerCase()
+        .compareTo(b['p_name'].toString().toLowerCase());
+    if (nameCompare != 0) {
+      return nameCompare;
+    } else {
+      // If names are same, sort by price ascending
+      int priceA = int.tryParse(a['p_price'].toString()) ?? 0;
+      int priceB = int.tryParse(b['p_price'].toString()) ?? 0;
+      return priceA.compareTo(priceB);
+    }
+  });
 
-          children: [
-            SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              child: Row(
-               
-                children: List.generate(  controller.subcat.length,
-                (index) => "${controller.subcat[index]}"
+  return Container(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: List.generate(controller.subcat.length,
+              (index) => "${controller.subcat[index]}"
                 .text
                 .color(darkFontGrey)
                 .fontFamily(semibold)
@@ -62,66 +75,67 @@ class Categorydetails extends StatelessWidget {
                 .box.white.rounded
                 .size(120, 60)
                 .margin(const EdgeInsets.symmetric(horizontal: 4))
-                .make()),
-                        ),
+                .make()
             ),
-
-          20.heightBox,
-            // item container
-
-            Expanded(
-              child:  GridView.builder(
-                shrinkWrap: true,
-                itemCount: data.length,
-              physics: const BouncingScrollPhysics(),
-              
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  
-                crossAxisCount: 2,
-                mainAxisSpacing: 8,
-                crossAxisSpacing: 8,
-                mainAxisExtent: 300), 
-                itemBuilder: (context,index){
-          return Column(
-                           
-          crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-
-           Image.network(data[index]['p_img'][0],height: 200,width: 150,fit: BoxFit.cover,),
-                10.heightBox,
-               "${data[index]['p_name']}".text.fontFamily(semibold).color(darkFontGrey).make(),
-                10.heightBox,
-                 "${data[index]['p_price']}".numCurrency.text.fontFamily(bold).color(bluecolor).size(16).make(),
-         
-
-         
-        ],
-      ).box.white.roundedSM.margin(const EdgeInsets.symmetric(horizontal: 4)).outerShadowSm.padding(const EdgeInsets.all(10)).make().onTap((){
-        Get.to(()=> ItemDetail(title: "${data[index]['p_name']}", data: data[index],));
-      } );
- 
-                } 
-              ),
-            ),
-          ],
+          ),
         ),
-      ) ;
- 
-            }
+        20.heightBox,
+        // item container
+        Expanded(
+          child: GridView.builder(
+            shrinkWrap: true,
+            itemCount: data.length,
+            physics: const BouncingScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 8,
+              crossAxisSpacing: 8,
+              mainAxisExtent: 300
+            ),
+            itemBuilder: (context, index) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.network(
+                    data[index]['p_img'][0],
+                    height: 200,
+                    width: 150,
+                    fit: BoxFit.cover,
+                  ),
+                  10.heightBox,
+                  "${data[index]['p_name']}"
+                    .text.fontFamily(semibold)
+                    .color(darkFontGrey)
+                    .make(),
+                  10.heightBox,
+                  "${data[index]['p_price']}"
+                    .numCurrency
+                    .text.fontFamily(bold)
+                    .color(bluecolor)
+                    .size(16)
+                    .make(),
+                ],
+              ).box.white.roundedSM
+                .margin(const EdgeInsets.symmetric(horizontal: 4))
+                .outerShadowSm
+                .padding(const EdgeInsets.all(10))
+                .make()
+                .onTap(() {
+                  Get.to(() => ItemDetail(
+                    title: "${data[index]['p_name']}",
+                    data: data[index],
+                  ));
+                });
+            },
+          ),
+        ),
+      ],
+    ),
+  );
 
-         }
-
-
-         ), 
-      
-      
-      
-      
-     
-
-      )
-    );
-    
-   
-  }
 }
+   } ),
+      )
+ 
+ );
+ }}

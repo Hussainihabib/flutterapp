@@ -15,5 +15,7 @@ const cartcollection = "carts";
 const chatscollection = "charts";
 const messagecollection = "messages";
 const ordercollection = "orders";
+const supportmessages = "support_messages";
+
 
 

@@ -70,5 +70,8 @@ static searchproduct(title){
     return firestore.collection(productcollection).get();
   }
 
+static Future<void> sendSupportMessage(Map<String, dynamic> data) {
+  return firestore.collection('support_messages').add(data);
+}
 
 }
