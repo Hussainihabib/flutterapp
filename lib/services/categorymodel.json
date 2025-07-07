@@ -1,0 +1,110 @@
+{
+    "categories":[
+        {
+            "name": "Hublot watches",
+            "subcategory":[
+                "Mens watches",
+                "Womens watches",
+                "Boys watches",
+                "Girls watches",
+                "Kids watches"
+
+            ]
+        },
+         {
+            "name": "Timex watches",
+            "subcategory":[
+                "Mens watches",
+                "Womens watches",
+                "Boys watches",
+                "Girls watches",
+                "Kids watches"
+            ]
+        },
+         {
+            "name": "Smarts watches",
+            "subcategory":[
+                "Samsung",
+                "Apple",
+                 "Mens watches",
+                "Womens watches",
+                "Boys watches",
+                "Girls watches",
+                "Kids watches"
+
+            ]
+        },
+        {
+            "name": "Rolexs watches",
+            "subcategory":[
+                "Mens watches",
+                "Womens watches",
+                "Boys watches",
+                "Girls watches",
+                "Kids watches"
+
+
+
+            ]
+        },
+           {
+            "name": "Rados watches",
+            "subcategory":[
+               "Mens watches",
+                "Womens watches",
+                "Boys watches",
+                "Girls watches",
+                "Kids watches"
+            ]
+        },
+           {
+            "name": "Casios watches",
+            "subcategory":[
+               "Mens watches",
+                "Womens watches",
+                "Boys watches",
+                "Girls watches",
+                "Kids watches"
+
+            ]
+        },
+           {
+            "name": "Hamilton watches",
+            "subcategory":[
+              "Mens watches",
+                "Womens watches",
+                "Boys watches",
+                "Girls watches",
+                "Kids watches"
+
+            ]
+        },
+         {
+            "name": "Tissot watches",
+            "subcategory":[
+               "Mens watches",
+                "Womens watches",
+                "Boys watches",
+                "Girls watches",
+                "Kids watches"
+
+            ]
+        },
+            {
+            "name": "Armani watches",
+            "subcategory":[
+               "Mens watches",
+                "Womens watches",
+                "Boys watches",
+                "Girls watches",
+                "Kids watches"
+
+            ]
+        }
+        
+        
+        
+
+        
+    ]
+}
