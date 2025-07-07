@@ -23,6 +23,10 @@ class Profilescreen extends StatelessWidget {
  
     return bgwidget(
       child: Scaffold(
+
+              appBar: AppBar(       
+             title: pr.text.white.fontFamily(bold).make(),
+),
         body: StreamBuilder(stream: Firestoreservices.getUser(currentUser!.uid), 
         builder: (BuildContext context, AsyncSnapshot <QuerySnapshot> snapshot){
             if (!snapshot.hasData) {

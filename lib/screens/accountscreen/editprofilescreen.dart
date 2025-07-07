@@ -1,4 +1,3 @@
-import 'dart:typed_data';
 
 import 'package:emart_app/widget/bgwidget.dart';
 import 'package:get/get.dart';

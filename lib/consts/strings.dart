@@ -26,6 +26,8 @@ const searchanything="Serch anything",
 topbrand="Brand"  ,
 todaydeal="Today 's Deal",
 flashsale="Flash Sale",
+pr="Profile",
+
 topseller="Top Seller" ,
 topcategories="Top Categories" ,
 womenwatches="Women Watches",
