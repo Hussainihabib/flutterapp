@@ -12,7 +12,6 @@ import 'package:emart_app/screens/orderscreen/orderscreen.dart';
 import 'package:emart_app/screens/wishlistscreen/wishlistscreen.dart';
 import 'package:emart_app/services/firestoreservices.dart';
 import 'package:emart_app/widget/bgwidget.dart';
-import 'package:emart_app/widget/button.dart';
 import 'package:get/get.dart';
 
 class Profilescreen extends StatelessWidget {
